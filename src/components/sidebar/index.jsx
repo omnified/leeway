@@ -43,6 +43,14 @@ const Sidebar = ({ list, setMainCategory }) => {
                                     One Piece
                                 </Nav.Link>
                             </Nav.Item>
+                            <Nav.Item>
+                                <Nav.Link
+                                    eventKey="shoes"
+                                    onClick={() => setMainCategory('shoes')}
+                                >
+                                    Shoes
+                                </Nav.Link>
+                            </Nav.Item>
                         </Nav>
                     </Col>
                 </Row>

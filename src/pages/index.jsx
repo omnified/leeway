@@ -31,6 +31,8 @@ import Shirt from '../components/top/shirt';
 import Pullover from '../components/top/pullover';
 import All from './all';
 import Sidebar from '../components/sidebar';
+import FormalShoes from '../components/shoes/formal';
+import InformalShoes from '../components/shoes/informal';
 
 const Closet = ({ closetItems }) => {
     const { id } = useParams();
@@ -283,6 +285,13 @@ const Closet = ({ closetItems }) => {
 
                                     {mainCategory === 'all' ? (
                                         <All list={list} />
+                                    ) : null}
+
+                                    {mainCategory === 'shoes' ? (
+                                        <>
+                                            <FormalShoes list={list} />
+                                            <InformalShoes list={list} />
+                                        </>
                                     ) : null}
                                 </GridItem>
                             </Grid>

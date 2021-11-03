@@ -11,6 +11,8 @@ import Blazer from '../components/outer/blazer';
 import Cardigans from '../components/outer/cardigans';
 import Coat from '../components/outer/coat';
 import Jacket from '../components/outer/jacket';
+import FormalShoes from '../components/shoes/formal';
+import InformalShoes from '../components/shoes/informal';
 import Pullover from '../components/top/pullover';
 import Shirt from '../components/top/shirt';
 import Sleeveless from '../components/top/sleeveless';
@@ -31,6 +33,8 @@ const All = ({ list }) => {
     const cardiganLength = list.cardigan;
     const swimwearLength = list.swimwear;
     const sleevelessLength = list.sleeveless;
+    const informalLength = list.informalShoes;
+    const formalLength = list.formalShoes;
 
     const [total, setTotal] = useState();
 
@@ -49,7 +53,8 @@ const All = ({ list }) => {
                 sweaterLength.length +
                 cardiganLength.length +
                 swimwearLength.length +
-                sleevelessLength.length
+                informalLength.length +
+                formalLength.length
         );
     }, [
         tshirtLength.length,
@@ -66,6 +71,8 @@ const All = ({ list }) => {
         cardiganLength.length,
         swimwearLength.length,
         sleevelessLength.length,
+        informalLength.length,
+        formalLength.length,
     ]);
 
     return (
@@ -232,6 +239,30 @@ const All = ({ list }) => {
                     <Dress list={list} />
                     <Box w="100%" p={4} color="black" textAlign="left">
                         Total Items: <strong>{dressLength?.length}</strong>
+                    </Box>
+                    <hr />
+                    <br />
+                </>
+            ) : null}
+
+            {/* SHOES */}
+
+            {informalLength && informalLength?.length > 0 ? (
+                <>
+                    <InformalShoes list={list} />
+                    <Box w="100%" p={4} color="black" textAlign="left">
+                        Total Items: <strong>{informalLength?.length}</strong>
+                    </Box>
+                    <hr />
+                    <br />
+                </>
+            ) : null}
+
+            {formalLength && formalLength?.length > 0 ? (
+                <>
+                    <FormalShoes list={list} />
+                    <Box w="100%" p={4} color="black" textAlign="left">
+                        Total Items: <strong>{formalLength?.length}</strong>
                     </Box>
                     <hr />
                     <br />
