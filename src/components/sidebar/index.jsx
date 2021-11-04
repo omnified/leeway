@@ -48,7 +48,7 @@ const Sidebar = ({ list, setMainCategory }) => {
                                     eventKey="shoes"
                                     onClick={() => setMainCategory('shoes')}
                                 >
-                                    Shoes
+                                    Footwear
                                 </Nav.Link>
                             </Nav.Item>
                         </Nav>
